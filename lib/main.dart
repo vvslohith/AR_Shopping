@@ -2,12 +2,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:trialtwo/wrapper.dart';
 import 'package:get/get.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://ygjrnsxkezffcxovznkn.supabase.co', // Replace with your Supabase URL
+    anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlnanJuc3hrZXpmZmN4b3Z6bmtuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDYzODI1ODAsImV4cCI6MjA2MTk1ODU4MH0.kZ1YIH5zfyqF58cVDRMI_DSkbev1KVuxkgI1vlqMjVE', // Replace with your Supabase anon key
+  );
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
